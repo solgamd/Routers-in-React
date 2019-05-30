@@ -1,28 +1,26 @@
 import React from 'react';
-import PeopleCard from './PeopleCard';
+import PeopleCard from '../components/PeopleCard';
 
-class ViewPersonId extends React.Component {
+class ViewPeople extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       people: []
     }
   }
-
   componentDidMount() {
-    fetch("https://ghibliapi.herokuapp.com/people/:id")
+    fetch("https://ghibliapi.herokuapp.com/people")
       .then(res => res.json())
       .then(ppl => this.setState({ people: ppl }))
   }
-
   render() {
     return (
       <>
-        <h1>Studio Ghibli Character</h1>
+        <h1>Studio Ghibli People</h1>
         <div className="row m-2 d-flex">
           {this.state.people.map((person, i) => {
             return (
-              <PeopleCard key={i} name={person.name} age={person.age} gender={person.gender} id={Child} />
+              <PeopleCard key={i} name={person.name} age={person.age} gender={person.gender} id={person.id} />
             );
           })}
         </div>
@@ -31,10 +29,4 @@ class ViewPersonId extends React.Component {
   }
 }
 
-function Child({ match }) {
-  return (
-      <p>ID: {match.params.id}</p>
-  );
-}
-
-export default ViewPersonId;
+export default ViewPeople;

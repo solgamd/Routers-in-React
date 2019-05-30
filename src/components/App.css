@@ -3,14 +3,23 @@
     padding: 10px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.2em;
-    outline: 2px solid orangered;
+    border: 1px solid orangered;
+    border-radius: 5%;
+    color: darkcyan;
+}
 
+.logo {
+    height: 5px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 50px;
+    color: orangered;
 }
 
 .film-card-header {
@@ -26,6 +35,21 @@ h1 {
     font-weight: 200;
     font-size: 1.2em;
     margin: 50px;
+    color: orangered;
+}
+
+.film-id-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.film-id-link {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5%;
+    
 }
 
 

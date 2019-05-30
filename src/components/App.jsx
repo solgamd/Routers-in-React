@@ -1,30 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import GoHome from './GoHome';
-import ViewFilms from './ViewFilms';
-import ViewFilmId from './ViewFilmId';
-import ViewPeople from './ViewPeople';
+import Navbar from './Navbar';
+import GoHome from '../views/GoHome';
+import ViewFilms from '../views/ViewFilms';
+import FilmDetails from '../views/ViewFilmDetails';
 import './App.css';
 
-class App extends Component {
+const App = () => {
 
-    render() {
-        return (
-            <Router>
-                <>
-                    <Link className="link" to="/">Go Home</Link>
-                    <Link className="link" to="/ViewFilms">View Films</Link>
-                    <Link className="link" to="/ViewPeople">View People</Link>
-                    <Switch>
-                        <Route exact path="/" component={GoHome} />
-                        <Route path="/ViewFilms" component={ViewFilms} />
-                        <Route path="/ViewFilmId" component={ViewFilmId} />
-                        <Route path="/ViewPeople" component={ViewPeople} />
-                    </Switch>
-                </>
-            </Router>
-        );
-    }
+    return (
+        <Router>
+            <Navbar />
+            <main className="container">
+                <Switch>
+                    <Route exact path="/" component={GoHome} />
+                    <Route exact path="/ViewFilms" component={ViewFilms} />
+                    <Route exact path="/ViewFilms/:id/details" component={FilmDetails} />
+                </Switch>
+            </main>
+        </Router>
+    );
 }
 
 export default App;
