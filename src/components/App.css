@@ -10,12 +10,27 @@
 
 .logo {
     height: 5px;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
+}
+
+.title {
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 25px;
+    color: darkslategray;
 }
 
 h1 {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 50px;
+    color: orangered;
+}
+
+h3 {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 50px;

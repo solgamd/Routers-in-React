@@ -1,28 +1,40 @@
-import React from 'react';
-import PeopleCard from '../components/PeopleCard';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-class ViewPeople extends React.Component {
+class ViewPeople extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      people: []
+      people: [],
     }
   }
+
   componentDidMount() {
     fetch("https://ghibliapi.herokuapp.com/people")
       .then(res => res.json())
-      .then(ppl => this.setState({ people: ppl }))
+      .then(people => this.setState({ people }));
   }
+
   render() {
     return (
       <>
-        <h1>Studio Ghibli People</h1>
-        <div className="row m-2 d-flex">
-          {this.state.people.map((person, i) => {
+        <h3>Characters</h3>
+        <div className="row m-2">
+          {this.state.people.map(((people, i) => {
             return (
-              <PeopleCard key={i} name={person.name} age={person.age} gender={person.gender} id={person.id} />
+              <div key={i} className="col-4 mb-4">
+                <div className="card h-100">
+                  <h4 className="card-header bg-primary text-white people-card-header">{people.name}</h4>
+                  <div className="card-body">
+                    <p className="card-text">Read more about this character</p>
+                    <div className="people-id-div">
+                      <Link className="people-id-link align-items-end btn btn-outline-primary" onClick="this.getDetails()" to={`/ViewPeople/${people.id}/details`} >HERE</Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
             );
-          })}
+          }))}
         </div>
       </>
     );
