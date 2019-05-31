@@ -28,7 +28,7 @@ class ViewPeople extends Component {
                   <div className="card-body">
                     <p className="card-text">Read more about this character</p>
                     <div className="people-id-div">
-                      <Link className="people-id-link align-items-end btn btn-outline-primary" onClick="this.getDetails()" to={`/ViewPeople/${people.id}/details`} >HERE</Link>
+                      <Link className="people-id-link align-items-end btn btn-outline-primary" to={`/ViewPeople/${people.id}/details`} >HERE</Link>
                     </div>
                   </div>
                 </div>

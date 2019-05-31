@@ -7,7 +7,7 @@ const GoHome = () => {
         <h1>Home</h1>
       </div>
       <div className="row d-flex justify-content-center">
-        <h4 className="homeH4">Click a button above to view elements of Studio Ghibli.</h4>
+        <h4 className="homeH4">Click a green button above to view elements of Studio Ghibli.</h4>
       </div>
     </section>
   );

@@ -9,11 +9,15 @@ const Navbar = () => {
                 <img src={require("../studio-ghibli-logo.svg")} alt="Ghibli Logo" height="100" width="200" />
             </div>
             <div className="row justify-content-center">
-                <Link className="link btn btn-success" to="/">Go Home</Link>
-                <Link className="link btn btn-success" to="/ViewFilms">View Films</Link>
-                <Link className="link btn btn-success" to="/ViewPeople">View Characters</Link>
+                <Link className="linkHome btn btn-secondary" to="/">HOME</Link>
             </div>
-
+            <div className="row justify-content-center">
+                <Link className="link btn btn-info" to="/ViewFilms">View Films</Link>
+                <Link className="link btn btn-info" to="/ViewPeople">View Characters</Link>
+                <Link className="link btn btn-info" to="/ViewLocations">View Locations</Link>
+                <Link className="link btn btn-info" to="/ViewSpecies">View Species</Link>
+                <Link className="link btn btn-info" to="/ViewVehicles">View Vehicles</Link>
+            </div>
         </div>
     );
 }
